@@ -18,19 +18,23 @@ public class Move : MonoBehaviour {
 	void Update () {
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
-            transform.position += Vector3.forward * Time.deltaTime * Speed;
+            transform.position +=
+              transform.TransformDirection(Vector3.forward) * Time.deltaTime * Speed;
         }
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.position += Vector3.left * Time.deltaTime * Speed;
+            transform.position +=
+              transform.TransformDirection(Vector3.left) * Time.deltaTime * Speed;
         }
         if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
-            transform.position += Vector3.back * Time.deltaTime * Speed;
+            transform.position +=
+              transform.TransformDirection(Vector3.back) * Time.deltaTime * Speed;
         }
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
-            transform.position += Vector3.right * Time.deltaTime * Speed;
+            transform.position +=
+              transform.TransformDirection(Vector3.right) * Time.deltaTime * Speed;
         }
     }
 }
