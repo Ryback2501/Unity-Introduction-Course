@@ -2,39 +2,85 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Move : MonoBehaviour {
+public class Move : MonoBehaviour
+{
+    /// <summary>
+    /// Reference to the rigidbody of the player
+    /// </summary>
+    public Rigidbody MyRigidbody;
+
+    /// <summary>
+    /// The acceleration of the movement
+    /// </summary>
+    public float Acceleration;
+
+    /// <summary>
+    /// The initial vertical velocity of the jump
+    /// </summary>
+    public float JumpStartVelocity;
 
     /// <summary>
     /// The speed the avatar moves at
     /// </summary>
-    public float Speed;
+    public float MaxSpeed;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    /// <summary>
+    /// The maximum inclination of a surface to consider it ground.
+    /// </summary>
+    public float MaxSlope;
+
+    /// <summary>
+    /// If TRUE, the player is in contact with the ground;
+    /// </summary>
+    private bool grounded;
 	
 	// Update is called once per frame
-	void Update () {
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+	void Update ()
+    {
+        if (grounded && MyRigidbody.velocity.magnitude < MaxSpeed)
         {
-            transform.position +=
-              transform.TransformDirection(Vector3.forward) * Time.deltaTime * Speed;
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+            {
+                MyRigidbody.AddRelativeForce(Vector3.forward * Acceleration);
+            }
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+            {
+                MyRigidbody.AddRelativeForce(Vector3.left * Acceleration);
+            }
+            if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+            {
+                MyRigidbody.AddRelativeForce(Vector3.back * Acceleration);
+            }
+            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+            {
+                MyRigidbody.AddRelativeForce(Vector3.right * Acceleration);
+            }
         }
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            transform.position +=
-              transform.TransformDirection(Vector3.left) * Time.deltaTime * Speed;
+            if (grounded)
+            {
+                var velocity = MyRigidbody.velocity;
+                velocity.y = JumpStartVelocity;
+                MyRigidbody.velocity = velocity;
+            }
         }
-        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+    }
+
+    void OnCollisionStay(Collision collisionInfo)
+    {
+        foreach (var contact in collisionInfo.contacts)
         {
-            transform.position +=
-              transform.TransformDirection(Vector3.back) * Time.deltaTime * Speed;
+            if (Vector3.Angle(contact.normal, Vector3.up) < MaxSlope)
+            {
+                grounded = true;
+            }
         }
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.position +=
-              transform.TransformDirection(Vector3.right) * Time.deltaTime * Speed;
-        }
+    }
+
+    void OnCollisionExit(Collision collisionInfo)
+    {
+        grounded = false;
     }
 }
