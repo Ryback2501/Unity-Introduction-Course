@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 114641003447756402}
   - component: {fileID: 114844075176917124}
   - component: {fileID: 114524827614062164}
-  - component: {fileID: 114790345956837886}
+  - component: {fileID: 114264943501365566}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -181,6 +181,19 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1946958983576676}
   m_Enabled: 1
+--- !u!114 &114264943501365566
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1451052449123332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6014fb51aac42448b50632994c6df6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Reach: 1
+  Camera: {fileID: 4637973923631732}
 --- !u!114 &114480163539513664
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -225,18 +238,6 @@ MonoBehaviour:
   VerticalSensitivity: 10
   MaxVerticalDev: 45
   Forward: {x: 0, y: 0, z: 0}
---- !u!114 &114790345956837886
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1451052449123332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96bfa0972e237284cab87110385050a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxLifePoints: 20000
 --- !u!114 &114844075176917124
 MonoBehaviour:
   m_ObjectHideFlags: 1

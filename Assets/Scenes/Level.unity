@@ -463,8 +463,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114790345956837886, guid: 3d3d225cf3a2aba4cadbf8648f65818a, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3d3d225cf3a2aba4cadbf8648f65818a, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &783923534
@@ -1022,6 +1021,10 @@ Transform:
   m_Father: {fileID: 1205159807}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1642661350 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 153948, guid: 0361d2745a6ac4f4dbc209983f0bfa6e, type: 2}
+  m_PrefabInternal: {fileID: 1774735705}
 --- !u!1 &1769720215
 GameObject:
   m_ObjectHideFlags: 0
@@ -1188,6 +1191,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4037122968224152, guid: 2f0f9b9f69ae1214089b75cadc1888bb, type: 2}
       propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114649258027631532, guid: 2f0f9b9f69ae1214089b75cadc1888bb,
+        type: 2}
+      propertyPath: Turret
+      value: 
+      objectReference: {fileID: 1642661350}
+    - target: {fileID: 65287587495975002, guid: 2f0f9b9f69ae1214089b75cadc1888bb,
+        type: 2}
+      propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
