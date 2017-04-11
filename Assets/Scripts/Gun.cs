@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public Camera PlayerCamera;
+
+    /// <summary>
+    /// 
+    /// </summary>
     public GameObject Bullet;
 
 	// Use this for initialization
