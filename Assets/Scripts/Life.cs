@@ -50,6 +50,7 @@ public class Life : MonoBehaviour
     {
         if(GetComponent<Move>() != null)
         {
+            SceneManager.LoadScene("Game Over");
             //TODO: Go to GAME OVER
         }
         Destroy(gameObject);

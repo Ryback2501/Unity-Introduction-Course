@@ -69,6 +69,10 @@ public class Feedback : MonoBehaviour
     /// <param name="time">The time the message is visible. If zero, the message doesn't automatically hide.</param>
     public void ShowMessage(string message, float time = 0f)
     {
+        if(text == null)
+        {
+            return;
+        }
         text.text = message;
         messageTime = time;
         elapsedTime = 0f;

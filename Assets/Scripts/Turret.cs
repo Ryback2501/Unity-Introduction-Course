@@ -24,6 +24,10 @@ public class Turret : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
+        if(Target == null)
+        {
+            return;
+        }
         var targetRotation = Quaternion.LookRotation((Target.position - transform.position).normalized);
         var angle = targetRotation.eulerAngles.y - transform.rotation.eulerAngles.y;
 

@@ -80,6 +80,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\Scripts\Feedback.cs" />
+    <Compile Include="Assets\Scripts\FinishLevel.cs" />
     <Compile Include="Assets\Scripts\Gun.cs" />
     <Compile Include="Assets\Scripts\Hand.cs" />
     <Compile Include="Assets\Scripts\Injurer.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="Assets\Scripts\MachineGun.cs" />
     <Compile Include="Assets\Scripts\MouseCamera.cs" />
     <Compile Include="Assets\Scripts\Move.cs" />
+    <Compile Include="Assets\Scripts\SceneJumper.cs" />
     <Compile Include="Assets\Scripts\Turret.cs" />
     <Compile Include="Assets\Scripts\VerticalDoor.cs" />
   </ItemGroup>
