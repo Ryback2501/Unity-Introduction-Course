@@ -26,5 +26,9 @@ public class Knob : MonoBehaviour
         {
             animator.SetTrigger("Open");
         }
+        else
+        {
+            Feedback.Instance.ShowMessage("You must defeat the turret first.", 3f);
+        }
     }
 }

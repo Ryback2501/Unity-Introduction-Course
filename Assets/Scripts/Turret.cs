@@ -36,4 +36,9 @@ public class Turret : MonoBehaviour
 
         transform.Rotate(Vector3.up, angle);
     }
+
+    void OnDestroy()
+    {
+        Feedback.Instance.ShowMessage("Congratulations. Now the door is open.", 3f);
+    }
 }
